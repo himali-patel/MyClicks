@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Photos Portfolio - A Gatsby Contentful Site`,
+    description: `Learning Website using Gatsby for photos portfolio`,
+    author: `@abc`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,9 +24,23 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
+
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `i714dtkqixhz`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: '6a0dcadf0264704bd4a384180e21806cd67a1affbd517b2ed85e0f60f3d3ba61',
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/blog/*`] },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
