@@ -21,7 +21,8 @@ export class Contact extends Component {
                         </div>
                     </div>
                     <div className="col-lg-8">
-                    <form name="contact" method="POST" data-netlify="true" action="/sucess">
+                    <form name="contact" method="POST" data-netlify="true"
+            data-netlify-honeypot="bot-field" action="/success">
                             <p>
                                 <label>Your Name: <input type="text" name="name" /></label>   
                             </p>
