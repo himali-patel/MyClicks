@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import {graphql } from "gatsby"
 import classNames from "classnames";
-import Helmet from "react-helmet"
-import Layout from "../components/layout"
 
-class Portfolio extends Component {
+// const List = ({ portfolioImages, onItemClick }) => (
+//   <ul>
+//     {
+//       items.map(({node}, i) => <li key={i} value={node.blogCategoryId} onClick={onItemClick}>{node.blogCategoryId}</li>)
+//     }
+//   </ul>
+// );
+
+class Tab extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedType: "Birds Photography"
-      
+      selectedType: "Wildlife Photgraphy"
     };
     
   }
@@ -17,12 +22,11 @@ class Portfolio extends Component {
   handleItemClick = (e) => {   
     var a = e.target.getAttribute('data-value');
     console.log(a);
-    this.setState({ selectedType: a});
+    this.setState({ selectedType: a });
   }
 
   render() {
     const { selectedType } = this.state;
-    const siteTitle = this.props.data.site.siteMetadata.title
     const portfolioImages = this.props.data.allContentfulPortfolio.edges
     var Categorytype = portfolioImages.map(function ({node}) {
       return node.blogCategoryId;
@@ -33,33 +37,30 @@ class Portfolio extends Component {
 
 
     return (
-      <div>
-      <Helmet title={siteTitle} />
-      <Layout>
-      <div className="container portfolio-listing">      
-        <div className="text-center pad-40">
-          <h2 className="section-title">My Random Clicks....!!</h2>
-        </div>
-        <ul className="tab-list">
+      <div>      
+     
+        <ul className="row">
           {              
               CategoryUnique.map(( i)=> {
-                return (    
-                  <li key={i} value={i}  onClick={this.handleItemClick} data-value={i} className={this.state.selectedType === i ? 'active grad-btn' : 'grad-btn'} >{i.split(' ')[0]}</li>
-                
-                );           
-              })
-          }
-        </ul>            
-        <div className="tab-content">
-            <ul className="gallery">
-                {portfolioImages.map(({ node })=> {                
+              return (    
+                <li key={i} value={i} onClick={this.handleItemClick} data-value={i}>{i}</li>
+              
+              );
+           
+            })}
+            </ul>
+            
+             <div className="tab-content">
+                <ul className="row">
+                  {portfolioImages.map(({ node })=> {                
                     const isSelectedType = selectedType === node.blogCategoryId;                
                     const singleCardClass = classNames("single-card", {
                       hide: !isSelectedType
-                  });                 
-                console.log(node.blogCategoryId);              
+                    });
+                 
+                  console.log(node.blogCategoryId);              
                     return (    
-                      <li  className={singleCardClass + " col-md-3 gallery-item"}>            
+                      <li  className={singleCardClass + " col-md-3"}>            
                       <a
                         href={node.slug}
                         key={node.slug}                 
@@ -72,27 +73,20 @@ class Portfolio extends Component {
                     );
                 
                   })}
-              </ul>
-         </div>
-      </div>
-      </Layout>
+                </ul>
+            </div>
+
       </div>
     );
   }
 }
 
 
-export default Portfolio;
+export default Tab;
 
 export const pageQuery = graphql`
-  query PortfolioQuery {
-     
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }  
+  query TabQuery {
+  
         allContentfulPortfolio{
           edges{
             node{  

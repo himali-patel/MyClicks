@@ -54,14 +54,14 @@ class Blogpreview extends Component {
                 </div>
                   <h2 className="entry-title">
                     <Link to={blog.slug}> {
-                      blog.blogTitle > blog.blogTitle ? ( blog.blogTitle) : ( blog.blogTitle.substring(0, MAX_LENGTH_Title))
+                      blog.blogTitle > MAX_LENGTH ? ( blog.blogTitle) : ( blog.blogTitle.substring(0, MAX_LENGTH_Title))
                     }   </Link>
                   </h2>
                   <div className="entry-content">
                     {/* <p>{blog.blogShortDesc}</p>    */}
                   
                     {
-                      blog.blogShortDesc > blog.blogShortDesc ? ( blog.blogShortDesc) : ( blog.blogShortDesc.substring(0,MAX_LENGTH)+ '...')
+                      blog.blogShortDesc > MAX_LENGTH ? ( blog.blogShortDesc) : ( blog.blogShortDesc.substring(0,MAX_LENGTH)+ '...')
                     }                   
                                     
                   </div>                     

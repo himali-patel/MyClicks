@@ -16,7 +16,9 @@ a:hover {
   color: #777;
   text-decoration: none;
 }
-
+li{
+  list-style: none;
+}
 img {
   max-width: 100%;
 }
@@ -319,7 +321,7 @@ h2.section-title {
 h2.section-title:after {
   display: block;
   content: " ";
-  background: #cbad74;
+  background: #a57d33;
   height: 2px;
   width: 50px;
   margin: 20px auto 0 auto;
@@ -359,3 +361,51 @@ article.blog-listing  a.entry-read-more {
   font-size: 18px;
   
 }
+
+.hide{
+  display: none;
+}
+
+.grad-btn {
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0px 15px;
+  padding: 10px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  /* background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff 51%, #83a4d4 100%); */
+  box-shadow: 0 0 20px #eee;
+  border:2px solid #004984;
+  border-radius: 40px;
+  border-width: 2px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #004984;
+}
+.active.grad-btn{border-image: linear-gradient(to right, #83a4d4 0%, #b6fbff 51%, #83a4d4 100%);
+  background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff 51%, #83a4d4 100%);
+  transition: all .3s ease 0s; color: #004984; border: 2px  solid #004984; line-height: 28px; box-shadow: 0 3px 3px 0 rgba(0,0,0,.1);
+
+}
+.pad-40{padding: 40px 0px;}
+.grad-btn:hover {
+  background-position: right center;
+  transition: all .3s ease 0s;
+  background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff 51%, #83a4d4 100%);
+  border-color: transparent;
+}
+
+.portfolio-listing .tab-list{
+  padding: 0;
+  text-align: center;
+  display: block;
+  margin-bottom: 70px;
+}
+
+.portfolio-listing ul.tab-list li{list-style: none;display: inline-block;cursor: pointer;}
+.portfolio-listing .tab-content{margin:20px 0px 70px;}
+.portfolio-listing .tab-content > ul{padding: 0;margin:0}
+.portfolio-listing .tab-content > ul > li{list-style: none;padding: 0;}
