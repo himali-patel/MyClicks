@@ -10,6 +10,8 @@ class Projects extends Component {
 
     this.state = {
       selectedType: "Wildlife Photgraphy"
+    
+
     };
 
     this.onSelectChange = this.onSelectChange.bind(this);
@@ -22,6 +24,7 @@ class Projects extends Component {
     const GalleryImageList = this.props.data.allContentfulPortfolio.edges
     // const projectImgs = this.props.data.allContentfulPortfolio.blogImage;
     const { selectedType } = this.state;
+   
     return (
       <section id="projects" className="section projects">
         <h2 className="text-center">PROJECTS</h2>
@@ -41,6 +44,7 @@ class Projects extends Component {
             {GalleryImageList.map(({ node })=> {
              
               const isSelectedType = selectedType === node.blogCategoryId;
+             
             
               const singleCardClass = classNames("single-card", {
                 hide: !isSelectedType
@@ -59,7 +63,11 @@ class Projects extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >   
-                 <img src={node.blogImage.file.url} alt=""/>
+                 {/* <img src={node.blogImage.file.url} alt=""/> */}
+               
+            
+
+                   
                 </a>
                 </li>  
               );

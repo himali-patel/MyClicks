@@ -3,12 +3,17 @@ import {graphql } from "gatsby"
 import classNames from "classnames";
 import Helmet from "react-helmet"
 import Layout from "../components/layout"
+import Lightbox from 'lightbox-react';
+import 'lightbox-react/style.css';
+
 
 class Portfolio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedType: "Birds Photography"
+      selectedType: "Birds Photography",
+      photoIndex: 0,
+      isOpen: false,
       
     };
     
@@ -24,6 +29,8 @@ class Portfolio extends Component {
     const { selectedType } = this.state;
     const siteTitle = this.props.data.site.siteMetadata.title
     const portfolioImages = this.props.data.allContentfulPortfolio.edges
+    const { photoIndex, isOpen } = this.state;
+    let images = []
     var Categorytype = portfolioImages.map(function ({node}) {
       return node.blogCategoryId;
     });
@@ -53,11 +60,11 @@ class Portfolio extends Component {
         <div className="tab-content">
             <ul className="gallery">
                 {portfolioImages.map(({ node })=> {                
-                    const isSelectedType = selectedType === node.blogCategoryId;                
+                    const isSelectedType = selectedType === node.blogCategoryId; 
                     const singleCardClass = classNames("single-card", {
                       hide: !isSelectedType
-                  });                 
-                console.log(node.blogCategoryId);              
+                  });
+                  images.push(node.blogImage.file.url);     
                     return (    
                       <li  className={singleCardClass + " col-md-3 gallery-item"}>            
                       <a
@@ -65,8 +72,27 @@ class Portfolio extends Component {
                         key={node.slug}                 
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => this.setState({ isOpen: true })}
                       >   
-                      <img src={node.blogImage.file.url} alt=""/>
+                     <img src={node.blogImage.file.url} alt=""/> 
+                      {isOpen && (
+                        <Lightbox
+                            mainSrc={images[photoIndex]}
+                            nextSrc={images[(photoIndex + 1) % images.length]}
+                            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+                            onCloseRequest={() => this.setState({ isOpen: false })}
+                            onMovePrevRequest={() =>
+                            this.setState({
+                                photoIndex: (photoIndex + images.length - 1) % images.length,
+                            })
+                            }
+                            onMoveNextRequest={() =>
+                            this.setState({
+                                photoIndex: (photoIndex + 1) % images.length,
+                            })
+                            }
+                        />
+                        )}
                       </a>
                       </li>  
                     );

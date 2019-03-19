@@ -409,3 +409,9 @@ article.blog-listing  a.entry-read-more {
 .portfolio-listing .tab-content{margin:20px 0px 70px;}
 .portfolio-listing .tab-content > ul{padding: 0;margin:0}
 .portfolio-listing .tab-content > ul > li{list-style: none;padding: 0;}
+
+.inner-blog-post .gatsby-image-wrapper{max-height: 500px; background-color: #fff; padding: 20px; box-shadow: 2px 2px 2px #e3e3e3;}
+.inner-blog-post h2.section-headline {
+  margin: 20px 0px;
+  font-size: 30px;
+}
