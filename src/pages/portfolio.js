@@ -59,24 +59,25 @@ class Portfolio extends Component {
         </ul>            
         <div className="tab-content">
             <ul className="gallery">
-                {portfolioImages.map(({ node })=> {                
+                {portfolioImages.map(({ node } , index)=> {                
                     const isSelectedType = selectedType === node.blogCategoryId; 
                     const singleCardClass = classNames("single-card", {
                       hide: !isSelectedType
                   });
-                  images.push(node.blogImage.file.url);     
+                  images.push(node.blogImage.file.url); 
+                  console.log(images.length);    
                     return (    
                       <li  className={singleCardClass + " col-md-3 gallery-item"}>            
-                      <a
-                        href={node.slug}
-                        key={node.slug}                 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => this.setState({ isOpen: true })}
-                      >   
-                     <img src={node.blogImage.file.url} alt=""/> 
-                      {isOpen && (
-                        <Lightbox
+                      <a href={node.slug} key={index} id={index} target="_blank" rel="noopener noreferrer" onClick={() => this.setState({ isOpen: true , photoIndex : index })} >   
+                      <img src={node.blogImage.file.url} alt=""/>    
+                     
+                      </a>
+                      </li>  
+                    );
+                
+                  })}
+                   {isOpen && (
+                        <Lightbox                      
                             mainSrc={images[photoIndex]}
                             nextSrc={images[(photoIndex + 1) % images.length]}
                             prevSrc={images[(photoIndex + images.length - 1) % images.length]}
@@ -93,11 +94,6 @@ class Portfolio extends Component {
                             }
                         />
                         )}
-                      </a>
-                      </li>  
-                    );
-                
-                  })}
               </ul>
          </div>
       </div>

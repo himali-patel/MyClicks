@@ -346,7 +346,7 @@ article.blog-listing  .entry-content  {
   padding: 10px 20px;
 }
 
-article.blog-listing  .gatsby-image-wrapper{max-height: 250px !important;}
+article.blog-listing  .gatsby-image-wrapper{max-height: 200px !important;}
 
 article.blog-listing  .entry-content-bottom {
   padding: 10px 20px;
@@ -415,3 +415,10 @@ article.blog-listing  a.entry-read-more {
   margin: 20px 0px;
   font-size: 30px;
 }
+
+.sidebar-blk {background: #f0faff; padding: 10px; box-shadow: 2px 2px 2px #f0faff;}
+.sidebar-blk ul {list-style:none;padding:0;}
+.sidebar-blk ul li{padding-bottom: 25px; display: inline-block; width: 100%;}
+.sidebar-blk .img-rounded{height:70px;width:70px;border-radius:50%;float: left; margin: 0 15px 0 0;}
+.sidebar-blk span.meta{display: block}
+.sidebar-blk ul li a{text-decoration: none; color: #002d52; font-family: 'Josefin Sans', sans-serif;    line-height: 20px;}
