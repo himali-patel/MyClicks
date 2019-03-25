@@ -67,7 +67,7 @@ class Portfolio extends Component {
                   images.push(node.blogImage.file.url); 
                   console.log(images.length);    
                     return (    
-                      <li  className={singleCardClass + " col-md-3 gallery-item"}>            
+                      <li  className={singleCardClass + " col-md-3 gallery-item"} id={index + '1'} key={index + '1'}>            
                       <a href={node.slug} key={index} id={index} target="_blank" rel="noopener noreferrer" onClick={() => this.setState({ isOpen: true , photoIndex : index })} >   
                       <img src={node.blogImage.file.url} alt=""/>    
                      

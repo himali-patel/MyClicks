@@ -21,6 +21,7 @@
     "gatsby-transformer-sharp": "^2.1.15",
     "glamor": "^2.20.40",
     "glamorous": "^5.0.0",
+    "jquery": "^3.3.1",
     "lightbox-react": "^0.3.7",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
@@ -29,7 +30,9 @@
     "react-helmet": "^5.2.0",
     "react-image-lightbox": "^5.1.0",
     "react-responsive-tabs": "^3.1.0",
-    "react-tabs": "^3.0.0"
+    "react-slick": "^0.23.2",
+    "react-tabs": "^3.0.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "prettier": "^1.16.4"

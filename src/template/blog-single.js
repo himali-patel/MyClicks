@@ -4,13 +4,44 @@ import Sidebar from "../components/sidebar"
 import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 class BlogPostTemplate extends Component {
   render() {
     const singlepost =this.props.data.contentfulPortfolio
+    const Imageurl =this.props.data.contentfulPortfolio.galleryImage
     const post = this.props.data.allContentfulPortfolio.edges
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+    let button;
    
-  
+    if(!Imageurl){
+      console.log("hi") 
+      button=  <Img
+      fluid={singlepost.blogImage.fluid}
+      backgroundColor={"#f4f8fb"}
+    />                
+    
+    }
+    else{
+      button=  <Slider {...settings}>   
+                                    
+      {Imageurl.map(({ file } , index) => {
+        return (
+          <div>
+          <img src={file.url} alt="modhera-sun-temple"/>
+          </div>
+        )
+      })}                  
+</Slider>
+    }
     return (
       <Layout>
         <Helmet title={`${singlepost.blogTitle}`} />
@@ -20,10 +51,12 @@ class BlogPostTemplate extends Component {
            
               <div className="col-lg-7 col-md-7">
                 <div className="entry-media">
-                  <Img
+                  {/* <Img
                     fluid={singlepost.blogImage.fluid}
                     backgroundColor={"#f4f8fb"}
-                  />
+                  /> */}
+                    {button}
+                  
                 </div>                   
                 <div className="post-content">
                   <h2 className="section-headline"> {singlepost.blogTitle} </h2>   
@@ -34,9 +67,9 @@ class BlogPostTemplate extends Component {
               <div className="col-md-4 offset-md-1 ">
                 <div className="sidebar-blk">
                     <ul className="">
-                        {post.map(({ node }) => {
+                        {post.map(({ node } , index) => {
                           return (
-                            <li key={node.slug}>
+                            <li key={index} id={index + '1'}>
                               <Sidebar blog={node} />
                             </li>
                           )
@@ -61,6 +94,14 @@ export const pageQuery = graphql`
       childContentfulPortfolioBlogDescriptionTextNode{
         childMarkdownRemark{
           html
+        }
+      }
+      galleryImage{
+        file{
+          url
+        }
+        fluid(maxWidth: 1800) {
+          ...GatsbyContentfulFluid_withWebp_noBase64
         }
       }
       blogImage {

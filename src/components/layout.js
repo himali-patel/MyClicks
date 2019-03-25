@@ -14,6 +14,8 @@ import { StaticQuery, graphql } from "gatsby"
 import "./layout.css"
 import 'bootstrap/dist/css/bootstrap.css';
 
+
+
 const Template = ({ children }) => (
   <StaticQuery
     query={graphql`

@@ -6,6 +6,11 @@ import Layout from "../components/layout"
  import Img from "gatsby-image" 
 import PortfolioPreview from "../components/portfoliopreview"
 import BlogPreview from "../components/blog-preview"
+// import "slick-carousel/slick/slick.css"; 
+// import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
+
+
 
 class IndexPage extends React.Component {
   render() {
@@ -13,12 +18,74 @@ class IndexPage extends React.Component {
    // const portfolioImages = this.props.data.allContentfulPortfolio.edges
     const blog = this.props.data.allContentfulPortfolio.edges;
     const coverphoto = this.props.data.coverImg
+    // const settings = {
+    //   dots: true,
+    //   infinite: true,
+    //   speed: 500,
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1
+    // };
     return (
       <Layout>
         <Helmet title={siteTitle} />   
         <div className="herosection">
         <div id="#top" className="cover animated">
-         <Img
+        
+                 {/* <Slider {...settings}>
+                      <div>
+                             <Img
+                                title="Cover image"
+                                alt="Air Balloon in Nature"   
+                                fluid={coverphoto.childImageSharp.fluid} 
+                                style={{
+                                  position: "relative",
+                                  left: 0,
+                                  top: 0,
+                                  width: "100%",
+                                  height: "100%",      
+                                
+                                }}
+                              />
+                                <div className="overlay">
+                                                  <div className="center">
+                                                      <h1 className="name">
+                                                        <b>HI, I'M Ammature Photographer</b>
+                                                      </h1>
+                                                      <h5 className="greetings">Life through a Lens.!!!</h5>
+                                                  </div>
+
+                                  </div>
+
+                       </div>
+                       <div>
+                             <Img
+                                title="Cover image"
+                                alt="Air Balloon in Nature"   
+                                fluid={coverphoto.childImageSharp.fluid} 
+                                style={{
+                                  position: "relative",
+                                  left: 0,
+                                  top: 0,
+                                  width: "100%",
+                                  height: "100%",      
+                                
+                                }}
+                              />
+                                <div className="overlay">
+                                                  <div className="center">
+                                                      <h1 className="name">
+                                                        <b>HI, I'M Ammature Photographer</b>
+                                                      </h1>
+                                                      <h5 className="greetings">Life through a Lens.!!!</h5>
+                                                  </div>
+
+                                  </div>
+
+                       </div>
+                   
+                 </Slider> */}
+                 
+                 <Img
                 title="Cover image"
                 alt="Air Balloon in Nature"   
                 fluid={coverphoto.childImageSharp.fluid} 
@@ -31,7 +98,7 @@ class IndexPage extends React.Component {
                 
                 }}
               />
-               <div className="overlay" />
+                 <div className="overlay">
                   <div className="center">
                       <h1 className="name">
                         <b>HI, I'M Ammature Photographer</b>
@@ -40,8 +107,10 @@ class IndexPage extends React.Component {
                    </div>
 
                  </div>
+
         </div>
-        <div className="indexpage">
+        
+        <div className="indexpage">        
           <div className="right-section blog-post pad-70">
             <div className="container">
               <div className="col-md-10 offset-md-1 portfolio-blk-container text-center ">
@@ -79,7 +148,7 @@ class IndexPage extends React.Component {
           </div>
         </div>
 
-      
+      </div>
        
       </Layout>
     )
