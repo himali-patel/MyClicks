@@ -7,12 +7,19 @@ import Img from "gatsby-image"
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { DiscussionEmbed } from "disqus-react";
+
 
 class BlogPostTemplate extends Component {
   render() {
     const singlepost =this.props.data.contentfulPortfolio
     const Imageurl =this.props.data.contentfulPortfolio.galleryImage
     const post = this.props.data.allContentfulPortfolio.edges
+    const disqusShortname = "myclicks-1";
+    const disqusConfig = {
+      identifier: singlepost.blogId,
+      title: singlepost.blogTitle,
+    };
     const settings = {
       dots: true,
       infinite: true,
@@ -78,7 +85,8 @@ class BlogPostTemplate extends Component {
                 </div>           
               </div>  
             </div>
-          </div>
+            <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+          </div>        
         </div>
       </Layout>
     )
