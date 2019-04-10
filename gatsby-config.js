@@ -3,6 +3,8 @@ module.exports = {
     title: `Photos Portfolio - A Gatsby Contentful Site`,
     description: `Learning Website using Gatsby for photos portfolio`,
     author: `@abc`,
+    twitterHandle: '@abc',
+    url:`https://myclicks.netlify.com/`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -55,10 +57,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/portfolio/*`] },
-    }
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `sanket_patel_me`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
   ],
+  
 
 }

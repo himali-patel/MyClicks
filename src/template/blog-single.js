@@ -8,11 +8,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { DiscussionEmbed } from "disqus-react";
+import Share from '../components/Share';
 
 
 class BlogPostTemplate extends Component {
   render() {
     const singlepost =this.props.data.contentfulPortfolio
+    const siteurl = this.props.data.site.siteMetadata.url;
+    const twiteerhandle = this.props.data.site.siteMetadata.twitterHandle
     const Imageurl =this.props.data.contentfulPortfolio.galleryImage
     const post = this.props.data.allContentfulPortfolio.edges
     const disqusShortname = "myclicks-1";
@@ -20,6 +23,16 @@ class BlogPostTemplate extends Component {
       identifier: singlepost.blogId,
       title: singlepost.blogTitle,
     };
+
+    const socialConfigss = {   
+      site: {
+        siteMetadata: { siteurl, twiteerhandle },
+      } ,
+     
+      title: singlepost.blogTitle,
+      slug:singlepost.slug
+    };
+
     const settings = {
       dots: true,
       infinite: true,
@@ -27,18 +40,18 @@ class BlogPostTemplate extends Component {
       slidesToShow: 1,
       slidesToScroll: 1
     };
-    let button;
+    let SliderImage;
    
     if(!Imageurl){
-      console.log("hi") 
-      button=  <Img
+     
+      SliderImage=<Img
       fluid={singlepost.blogImage.fluid}
       backgroundColor={"#f4f8fb"}
     />                
     
     }
     else{
-      button=  <Slider {...settings}>   
+      SliderImage=  <Slider {...settings}>  
                                     
       {Imageurl.map(({ file } , index) => {
         return (
@@ -62,7 +75,7 @@ class BlogPostTemplate extends Component {
                     fluid={singlepost.blogImage.fluid}
                     backgroundColor={"#f4f8fb"}
                   /> */}
-                    {button}
+                    {SliderImage}
                   
                 </div>                   
                 <div className="post-content">
@@ -85,6 +98,9 @@ class BlogPostTemplate extends Component {
                 </div>           
               </div>  
             </div>
+            {/* <Share socialConfig={{config: { socialConfigss, }, }} /> */}
+
+            <Share socialConfig={{...socialConfigss.site.siteMetadata.twiteerhandletitle, config: { url: `${siteurl}${socialConfigss.slug}`, title:`${socialConfigss.title}`, }, }}  />
             <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
           </div>        
         </div>
@@ -97,8 +113,15 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query blogPostQuery($slug: String) {
+          site {
+        siteMetadata {
+          url
+          twitterHandle
+        }
+      }
     contentfulPortfolio(slug: { eq: $slug }) {
       blogTitle  
+      slug
       childContentfulPortfolioBlogDescriptionTextNode{
         childMarkdownRemark{
           html

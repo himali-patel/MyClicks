@@ -2,10 +2,14 @@ import React from "react"
 import {graphql } from "gatsby"
 import Helmet from "react-helmet"
 import Layout from "../components/layout"
+
+
 // import SEO from "../components/seo"
  import Img from "gatsby-image" 
 import PortfolioPreview from "../components/portfoliopreview"
 import BlogPreview from "../components/blog-preview"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faHeart, faComment } from "@fortawesome/free-solid-svg-icons"
 // import "slick-carousel/slick/slick.css"; 
 // import "slick-carousel/slick/slick-theme.css";
 // import Slider from "react-slick";
@@ -17,6 +21,7 @@ class IndexPage extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title;
    // const portfolioImages = this.props.data.allContentfulPortfolio.edges
     const blog = this.props.data.allContentfulPortfolio.edges;
+    const instaimg = this.props.data.allInstaNode.edges;
     const coverphoto = this.props.data.coverImg
     // const settings = {
     //   dots: true,
@@ -143,12 +148,32 @@ class IndexPage extends React.Component {
                   </div>
                 </div>
               </div>
+                
+             <div className="pad-70">
+              <h2 className="portfolio-title text-center  section-title">Instagram Feed</h2>
+                <div className="col-md-10 offset-md-1 ">            
+                  <ul className="row insta-blk">                  
+                      {instaimg.map(({ node }) => {
+                        return (                        
+                            <li  key={node.id} className="insta-img-cnt">
+                            <Img fixed={node.localFile.childImageSharp.fixed} />                         
+                              <p className="insta-likes-comm"> <span className="insta-like"> <FontAwesomeIcon icon={faHeart} className="icon" />{node.likes}</span> <span className="insta-comment"><FontAwesomeIcon className="icon"  icon={faComment} />{node.comments}</span></p>
+                            </li>
+                        )
+                      })}
+                  </ul>
+                    {/* <div className=""><Link>Follow me on Instagram</Link></div> */}
+                </div>
+                   
+             
+              </div>
       
             </div>
           </div>
         </div>
 
       </div>
+    
        
       </Layout>
     )
@@ -174,7 +199,7 @@ query allImgsQuery {
       }
     }
   } 
-  allContentfulPortfolio{
+  allContentfulPortfolio(limit:4){
     edges{
       node{
         id
@@ -189,6 +214,28 @@ query allImgsQuery {
             ...GatsbyContentfulFluid_noBase64
          }
         }
+      }
+    }
+  }
+  allInstaNode(limit:8) {
+    edges {
+      node {
+        id
+        likes
+        comments
+        mediaType
+        preview
+        original
+        timestamp
+        caption
+        localFile {
+          childImageSharp {
+            fixed(width: 200, height: 200) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+    
       }
     }
   }
