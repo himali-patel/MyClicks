@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Helmet from "react-helmet"
 import Layout from "../components/layout"
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby'
 import aboutImg from "../images/default.jpg"
 
 export class About extends Component {

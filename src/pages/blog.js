@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Helmet from "react-helmet"
 import Layout from "../components/layout"
 import BlogPreview from "../components/blog-preview"
-import {graphql } from "gatsby"
+import { graphql } from 'gatsby'
 
 export class BlogIndex extends Component {
   render() {

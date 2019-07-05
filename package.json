@@ -43,6 +43,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "dotenv": "^8.0.0",
     "prettier": "^1.16.4"
   },
   "keywords": [

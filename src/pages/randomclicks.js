@@ -7,7 +7,7 @@ import Lightbox from 'lightbox-react';
 import 'lightbox-react/style.css';
 
 
-class Portfolio extends Component {
+class RandomClicks extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -104,10 +104,10 @@ class Portfolio extends Component {
 }
 
 
-export default Portfolio;
+export default RandomClicks;
 
 export const pageQuery = graphql`
-  query PortfolioQuery {
+  query randomclicksquery {
      
     site {
       siteMetadata {

@@ -13,7 +13,7 @@ export class Footer extends Component {
                 <img src={logoImg} alt="brand logo" />
               </Link>
               <p className="copyright">
-                Copyrights © 2019 <b>Photo Blogger</b>
+                Copyrights © 2019 <b>Sanket Patel Photography</b>
                 <br />
                 All Rights Reserved.
               </p>

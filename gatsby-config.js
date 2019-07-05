@@ -1,3 +1,7 @@
+var dotenv = require("dotenv");
+dotenv.config();
+
+const { spaceId, accessToken } = process.env;
 module.exports = {
   siteMetadata: {
     title: `Photos Portfolio - A Gatsby Contentful Site`,
@@ -47,11 +51,11 @@ module.exports = {
 
     {
       resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `i714dtkqixhz`,
-        // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: '6a0dcadf0264704bd4a384180e21806cd67a1affbd517b2ed85e0f60f3d3ba61',
-      },
+        options: {
+          spaceId,
+          accessToken
+        }
+     
     },
 
     {

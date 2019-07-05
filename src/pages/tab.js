@@ -1,14 +1,7 @@
 import React, { Component } from "react";
-import {graphql } from "gatsby"
+import { graphql } from 'gatsby'
 import classNames from "classnames";
 
-// const List = ({ portfolioImages, onItemClick }) => (
-//   <ul>
-//     {
-//       items.map(({node}, i) => <li key={i} value={node.blogCategoryId} onClick={onItemClick}>{node.blogCategoryId}</li>)
-//     }
-//   </ul>
-// );
 
 class Tab extends Component {
   constructor(props) {

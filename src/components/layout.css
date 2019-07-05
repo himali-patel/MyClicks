@@ -32,7 +32,7 @@ img {
   margin: 0 auto
 }
 #main-menu ul {
-  margin: 0;
+  margin: 20px 0px 10px;
   padding: 0;
 }
 
@@ -44,7 +44,7 @@ img {
 
 #main-menu ul li a {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
   text-transform: uppercase;
   color: #000;
   line-height: 42px;
@@ -60,10 +60,6 @@ img {
 .brand-logo {
   padding-top: 3px;
   display: inline-block;
-}
-
-.brand-logo img {
-  height: 35px;
 }
 
 .header-wrapper {

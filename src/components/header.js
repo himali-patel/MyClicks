@@ -9,12 +9,12 @@ export class Header extends Component {
       <section className="header-wrapper">
         <div className="container">
           <div className="row">
-            <div className="col-lg-2 col-md-12 text-left">
+            <div className="col-lg-3 col-md-12 text-left">
               <Link to="/" className="brand-logo">
                 <img src={logoImg} alt="brand logo" />
               </Link>
             </div>
-            <div className="col-lg-10 col-md-12 text-right">
+            <div className="col-lg-9 col-md-12 text-right">
               <nav id="main-menu" className="text-right">
                 <ul>
                   <li>
@@ -24,7 +24,7 @@ export class Header extends Component {
                     <Link to="/about/">About</Link>
                   </li>
                   <li>
-                    <Link to="/portfolio/">Portfolio</Link>
+                    <Link to="/randomclicks/">Portfolio</Link>
                   </li>
                   <li>
                     <Link to="/blog/">Blog </Link>
