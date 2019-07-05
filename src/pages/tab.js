@@ -14,7 +14,7 @@ class Tab extends Component {
 
   handleItemClick = (e) => {   
     var a = e.target.getAttribute('data-value');
-    console.log(a);
+
     this.setState({ selectedType: a });
   }
 
@@ -51,7 +51,7 @@ class Tab extends Component {
                       hide: !isSelectedType
                     });
                  
-                  console.log(node.blogCategoryId);              
+                   
                     return (    
                       <li  className={singleCardClass + " col-md-3"}>            
                       <a

@@ -52,7 +52,6 @@ class Projects extends Component {
             //     return n.node.relativePath === `projects/${node.img}`;
             //   });
             //   const imageSizes = image.node.childImageSharp.sizes;
-            console.log(node.blogCategoryId);
           
               return (    
                 <li  className={singleCardClass + " col-md-3"}>            
