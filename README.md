@@ -1,17 +1,17 @@
   <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
   <p align="center">
     <a href="https://myclicks.netlify.com/">
-      <img alt="myclicks" src="https://github.com/Rohitguptab/OneShopper/blob/master/src/images/oneshopper-logo.png" width="200" />
+      <img alt="myclicks" src="https://github.com/himali-patel/Portfolio-Gatsby-Contentful/blob/master/src/images/logo.png" width="200" />
     </a>
   </p>
   <h1 align="center">
     MyClicks
   </h1>
 
-  Kick off your Ecommerce Website with OneShopper project you can build you site with this, We have used [Gatsby](https://www.gatsbyjs.org/) + [Contenful](https://www.gatsbyjs.org/packages/gatsby-source-contentful/?=Contenful) and [snipcart](https://www.gatsbyjs.org/packages/gatsby-plugin-snipcart/?=snipcart).
+  Kick off your Portfolio Website with  gatsby + contentful demo. You can have a look at this demo url: [https://myclicks.netlify.com/](https://myclicks.netlify.com/).
   
   Live Demo:
-  https://oneshopper.netlify.com
+  https://myclicks.netlify.com/
 
 
   ## 🚀 Quick start
@@ -22,7 +22,7 @@
 
       ```sh
       # Clone this Repositories
-      gatsby new OneShopper https://github.com/Rohitguptab/OneShopper.git
+      gatsby new your-project-name https://github.com/himali-patel/Portfolio-Gatsby-Contentful.git
       ```
 
   1.  **Start developing.**
@@ -30,8 +30,7 @@
       Navigate into your new site’s directory and start it up.
 
       ```sh
-      cd OneShopper
-      npm install
+      cd your-project-name/
       gatsby develop
       ```
 
@@ -41,10 +40,7 @@
 
       [ContentFul](https://be.contentful.com/login):
       - spaceId = **Key**
-      - accessToken = **Key**
-
-      [snipcart](https://app.snipcart.com/):
-      - snipcart = **Key**
+      - accessToken = **Key**     
 
 
   1.  **Open the source code and start editing!**
@@ -53,9 +49,7 @@
 
       _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-      Open the `OneShopper` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-
+     
   ## 🎓 Learning Gatsby
 
   Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
@@ -66,6 +60,6 @@
 
   ## 💫 Deploy
 
-  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Rohitguptab/OneShopper)
+  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/himali-patel/Portfolio-Gatsby-Contentful.git)
 
   <!-- AUTO-GENERATED-CONTENT:END -->
