@@ -1,7 +1,7 @@
   <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
   <p align="center">
     <a href="https://myclicks.netlify.com/">
-      <img alt="myclicks" src="https://github.com/himali-patel/Portfolio-Gatsby-Contentful/blob/master/src/images/logo.png" width="200" />
+      <img alt="myclicks" src="https://github.com/himali-patel/MyClicks/blob/master/src/images/logo.png" width="200" />
     </a>
   </p>
   <h1 align="center">
@@ -22,7 +22,7 @@
 
       ```sh
       # Clone this Repositories
-      gatsby new your-project-name https://github.com/himali-patel/Portfolio-Gatsby-Contentful.git
+      gatsby new your-project-name https://github.com/himali-patel/MyClicks
       ```
 
   1.  **Start developing.**
@@ -60,6 +60,6 @@
 
   ## 💫 Deploy
 
-  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/himali-patel/Portfolio-Gatsby-Contentful.git)
+  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/himali-patel/MyClicks)
 
   <!-- AUTO-GENERATED-CONTENT:END -->
