@@ -29,7 +29,7 @@ class Projects extends Component {
         <h2 className="text-center">PROJECTS</h2>
         <div className="section-content">
           <div className="subheader" >
-        
+
             <select componentclass="select"
                 placeholder="select"
                 defaultValue={selectedType}
@@ -74,7 +74,7 @@ class Projects extends Component {
             </ul>
           </div>
         </div>
-      </section>
+      </section>  
     );
   }
 }
