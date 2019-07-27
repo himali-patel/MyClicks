@@ -10,6 +10,8 @@
 
   Kick off your Portfolio Website with  gatsby + contentful demo. You can have a look at this demo url: [https://myclicks.netlify.com/](https://myclicks.netlify.com/).
   
+  <img src="https://github.com/himali-patel/MyClicks/blob/master/docs/screenshot.png" />
+    
   Live Demo:
   https://myclicks.netlify.com/
 
